@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-
 public enum PlayMode
 {
     Linear,
@@ -12,16 +10,13 @@ public enum PlayMode
 [ExecuteInEditMode]
 public class Rail : MonoBehaviour
 {
-    [Header("Blue or Green")] 
-    public string RailType;
-
     public Transform[] nodes;
 
     void OnDrawGizmos()
     {
         for (int i = 0; i < nodes.Length - 1; i++)
         {
-            Handles.DrawDottedLine(nodes[i].position, nodes[i + 1].position, 3.0f);
+            Debug.DrawLine(nodes[i].position, nodes[i + 1].position, Color.white);
         }
     }
 
